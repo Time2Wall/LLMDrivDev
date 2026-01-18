@@ -1,0 +1,20 @@
+# vLLM and inference
+vllm>=0.6.0
+torch>=2.0.0
+
+# HTTP clients
+httpx>=0.25.0
+requests>=2.31.0
+
+# OpenAI client
+openai>=1.0.0
+
+# MLflow for experiment tracking
+mlflow>=2.10.0
+
+# Data handling
+pandas>=2.0.0
+
+# Hugging Face (for model downloads)
+transformers>=4.40.0
+accelerate>=0.25.0

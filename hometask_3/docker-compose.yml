@@ -1,0 +1,64 @@
+version: "3.8"
+
+services:
+  # GPU version (requires NVIDIA GPU and nvidia-docker)
+  vllm-gpu:
+    image: vllm/vllm-openai:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      - HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN:-}
+    command: >
+      --model Qwen/Qwen2-0.5B-Instruct
+      --host 0.0.0.0
+      --port 8000
+      --max-model-len 2048
+      --dtype auto
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    profiles:
+      - gpu
+
+  # CPU version (slower but works without GPU)
+  vllm-cpu:
+    image: vllm/vllm-openai:latest
+    ports:
+      - "8000:8000"
+    volumes:
+      - ~/.cache/huggingface:/root/.cache/huggingface
+    environment:
+      - HUGGING_FACE_HUB_TOKEN=${HUGGING_FACE_HUB_TOKEN:-}
+      - VLLM_CPU_ONLY=1
+    command: >
+      --model Qwen/Qwen2-0.5B-Instruct
+      --host 0.0.0.0
+      --port 8000
+      --max-model-len 1024
+      --dtype float32
+      --device cpu
+    profiles:
+      - cpu
+
+  # MLflow tracking server
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.10.0
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./mlruns:/mlflow/mlruns
+      - ./mlartifacts:/mlflow/mlartifacts
+    command: >
+      mlflow server
+      --host 0.0.0.0
+      --port 5000
+      --backend-store-uri sqlite:///mlflow/mlruns/mlflow.db
+      --default-artifact-root /mlflow/mlartifacts
+    profiles:
+      - mlflow
