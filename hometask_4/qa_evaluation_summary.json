@@ -1,0 +1,59 @@
+{
+  "experiment": "QA Evaluation",
+  "dataset": "SberQuAD",
+  "sample_size": 50,
+  "models": [
+    "qwen2.5:1.5b",
+    "gemma2:2b"
+  ],
+  "results": {
+    "exact_match_mean": {
+      "gemma2:2b": 0.24,
+      "qwen2.5:1.5b": 0.26
+    },
+    "exact_match_std": {
+      "gemma2:2b": 0.4314,
+      "qwen2.5:1.5b": 0.4431
+    },
+    "f1_score_mean": {
+      "gemma2:2b": 0.5303,
+      "qwen2.5:1.5b": 0.6162
+    },
+    "f1_score_std": {
+      "gemma2:2b": 0.3616,
+      "qwen2.5:1.5b": 0.3356
+    },
+    "bleu_score_mean": {
+      "gemma2:2b": 0.2331,
+      "qwen2.5:1.5b": 0.3269
+    },
+    "bleu_score_std": {
+      "gemma2:2b": 0.2212,
+      "qwen2.5:1.5b": 0.2732
+    },
+    "semantic_similarity_mean": {
+      "gemma2:2b": 0.8307,
+      "qwen2.5:1.5b": 0.837
+    },
+    "semantic_similarity_std": {
+      "gemma2:2b": 0.179,
+      "qwen2.5:1.5b": 0.2315
+    },
+    "generation_time_mean": {
+      "gemma2:2b": 2.6204,
+      "qwen2.5:1.5b": 2.3908
+    },
+    "generation_time_std": {
+      "gemma2:2b": 1.4002,
+      "qwen2.5:1.5b": 0.0992
+    },
+    "response_length_mean": {
+      "gemma2:2b": 23.34,
+      "qwen2.5:1.5b": 33.54
+    },
+    "response_length_std": {
+      "gemma2:2b": 12.2768,
+      "qwen2.5:1.5b": 29.4682
+    }
+  }
+}
