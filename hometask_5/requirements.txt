@@ -1,0 +1,29 @@
+# Core dependencies
+langchain>=0.3.0
+langchain-community>=0.3.0
+langchain-ollama>=0.2.0
+langchain-chroma>=0.1.0
+
+# Embeddings and vector store
+chromadb>=0.4.0
+sentence-transformers>=2.2.0
+
+# Langfuse for observability (v2 for compatibility with local Langfuse v2 server)
+langfuse>=2.0.0,<3.0.0
+
+# Document processing
+pypdf>=3.0.0
+python-docx>=0.8.11
+unstructured>=0.10.0
+
+# Web framework (optional for web UI)
+gradio>=4.0.0
+
+# Utilities
+python-dotenv>=1.0.0
+numpy>=1.24.0
+tqdm>=4.65.0
+
+# Jupyter support
+jupyter>=1.0.0
+ipykernel>=6.0.0
