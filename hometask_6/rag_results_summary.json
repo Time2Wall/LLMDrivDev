@@ -1,0 +1,70 @@
+{
+  "dataset": {
+    "num_documents": 1200,
+    "num_categories": 10,
+    "embedding_dim": 384
+  },
+  "ann_comparison": [
+    {
+      "Index": "ChromaDB_COSINE",
+      "Index Type": "HNSW",
+      "Metric": "COSINE",
+      "Indexing Time (s)": 0.6400842666625977,
+      "Avg Search Time (ms)": 2.3878097534179688,
+      "Batch Search Time (ms)": 2.5103092193603516,
+      "Queries/sec": 418.7938333732726
+    },
+    {
+      "Index": "ChromaDB_L2",
+      "Index Type": "HNSW",
+      "Metric": "L2",
+      "Indexing Time (s)": 0.6831278800964355,
+      "Avg Search Time (ms)": 2.6543140411376953,
+      "Batch Search Time (ms)": 3.509044647216797,
+      "Queries/sec": 376.74517201113804
+    },
+    {
+      "Index": "ChromaDB_IP",
+      "Index Type": "HNSW",
+      "Metric": "IP",
+      "Indexing Time (s)": 0.6349344253540039,
+      "Avg Search Time (ms)": 2.37576961517334,
+      "Batch Search Time (ms)": 3.030538558959961,
+      "Queries/sec": 420.9162343071041
+    }
+  ],
+  "performance_benchmark": {
+    "single_query": {
+      "mean_ms": 1.089627742767334,
+      "std_ms": 0.39466839096463563,
+      "p50_ms": 1.001119613647461,
+      "p95_ms": 2.000856399536133,
+      "p99_ms": 2.0103859901428223
+    },
+    "batch_query": {
+      "10": {
+        "total_time": 0.0030002593994140625,
+        "time_per_query": 0.00030002593994140627
+      },
+      "25": {
+        "total_time": 0.004000425338745117,
+        "time_per_query": 0.00016001701354980468
+      },
+      "50": {
+        "total_time": 0.05265617370605469,
+        "time_per_query": 0.0010531234741210937
+      },
+      "100": {
+        "total_time": 0.07616138458251953,
+        "time_per_query": 0.0007616138458251953
+      }
+    },
+    "top_k_scaling": {
+      "1": 0.0011025190353393555,
+      "5": 0.0010010957717895507,
+      "10": 0.001002335548400879,
+      "20": 0.001202702522277832,
+      "50": 0.0016053676605224609
+    }
+  }
+}
