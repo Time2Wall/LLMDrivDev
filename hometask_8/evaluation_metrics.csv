@@ -1,0 +1,15 @@
+method,entity_type,precision,recall,f1
+rule_based,SYMPTOM,1.0,1.0,1.0
+rule_based,DIAGNOSIS,1.0,1.0,1.0
+rule_based,MEDICATION,1.0,1.0,1.0
+rule_based,DOSAGE,1.0,1.0,1.0
+rule_based,DURATION,1.0,1.0,1.0
+rule_based,SIDE_EFFECT,1.0,1.0,1.0
+rule_based,MACRO_AVG,1.0,1.0,1.0
+spacy,SYMPTOM,0.955,1.0,0.977
+spacy,DIAGNOSIS,0.229,1.0,0.372
+spacy,MEDICATION,0.893,1.0,0.943
+spacy,DOSAGE,0.118,0.509,0.192
+spacy,DURATION,0.24,1.0,0.387
+spacy,SIDE_EFFECT,0.959,1.0,0.979
+spacy,MACRO_AVG,0.566,0.918,0.642

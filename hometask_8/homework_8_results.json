@@ -1,0 +1,116 @@
+{
+  "config": {
+    "sample_size": 100,
+    "entity_types": [
+      "SYMPTOM",
+      "DIAGNOSIS",
+      "MEDICATION",
+      "DOSAGE",
+      "DURATION",
+      "SIDE_EFFECT"
+    ],
+    "methods": [
+      "rule_based",
+      "spacy"
+    ]
+  },
+  "performance": {
+    "rule_based": {
+      "time": 0.4631996154785156,
+      "throughput": 215.8896438130533,
+      "total_entities": 473
+    },
+    "spacy": {
+      "time": 5.9530487060546875,
+      "throughput": 16.79811554343452,
+      "total_entities": 1453
+    }
+  },
+  "evaluation": {
+    "rule_based": {
+      "SYMPTOM": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "DIAGNOSIS": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "MEDICATION": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "DOSAGE": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "DURATION": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "SIDE_EFFECT": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "MACRO_AVG": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "spacy": {
+      "SYMPTOM": {
+        "precision": 0.955,
+        "recall": 1.0,
+        "f1": 0.977
+      },
+      "DIAGNOSIS": {
+        "precision": 0.229,
+        "recall": 1.0,
+        "f1": 0.372
+      },
+      "MEDICATION": {
+        "precision": 0.893,
+        "recall": 1.0,
+        "f1": 0.943
+      },
+      "DOSAGE": {
+        "precision": 0.118,
+        "recall": 0.509,
+        "f1": 0.192
+      },
+      "DURATION": {
+        "precision": 0.24,
+        "recall": 1.0,
+        "f1": 0.387
+      },
+      "SIDE_EFFECT": {
+        "precision": 0.959,
+        "recall": 1.0,
+        "f1": 0.979
+      },
+      "MACRO_AVG": {
+        "precision": 0.566,
+        "recall": 0.918,
+        "f1": 0.642
+      }
+    }
+  },
+  "summary": {
+    "best_method": "rule_based",
+    "total_dialogues": 100,
+    "key_findings": [
+      "Rule-based extraction is fastest and provides consistent results",
+      "SpaCy adds NER capabilities but primarily uses keyword matching for medical entities",
+      "SYMPTOM and MEDICATION entities show highest extraction accuracy",
+      "DOSAGE and DURATION require pattern-based extraction",
+      "Side effects are challenging due to context dependency"
+    ]
+  }
+}
