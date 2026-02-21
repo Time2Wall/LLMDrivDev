@@ -1,0 +1,27 @@
+# Homework 7: Fine-tuning with LoRA/PEFT and LangChain Tools
+# Track C: Instructive Assistant
+
+# Core ML packages
+transformers==4.46.0
+datasets==2.21.0
+peft==0.13.0
+accelerate==0.34.0
+bitsandbytes>=0.44.0
+torch>=2.1.0
+trl==0.11.0
+scipy>=1.11.0
+safetensors>=0.4.0
+
+# LangChain packages
+langchain==0.3.7
+langchain-core==0.3.15
+langchain-community==0.3.5
+langchain-huggingface==0.1.0
+
+# Utilities
+huggingface_hub>=0.25.0
+matplotlib>=3.7.0
+
+# Jupyter
+jupyter>=1.0.0
+ipykernel>=6.0.0

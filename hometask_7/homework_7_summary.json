@@ -1,0 +1,29 @@
+{
+  "track": "C - Instructive Assistant",
+  "dataset": "mlabonne/FineTome-100k",
+  "model": "HuggingFaceTB/SmolLM-135M-Instruct",
+  "training_samples": 450,
+  "lora_config": {
+    "r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.1,
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ]
+  },
+  "tools_implemented": [
+    "text_formatter",
+    "template_generator",
+    "content_validator"
+  ],
+  "trainable_parameters": 460800,
+  "total_parameters": 134978112,
+  "key_changes": [
+    "SmolLM-135M instead of TinyLlama",
+    "ChatML format instead of ### markers",
+    "Conservative LoRA settings",
+    "500 samples instead of 2000",
+    "1 epoch training"
+  ]
+}
