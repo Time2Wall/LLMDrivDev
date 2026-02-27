@@ -1,17 +1,17 @@
 {
   "config": {
-    "ollama_model": "",
+    "ollama_model": "qwen2.5:1.5b",
     "embedding_model": "all-MiniLM-L6-v2",
     "top_k": 3,
     "num_golden_examples": 15,
     "num_knowledge_docs": 10,
-    "ollama_available": false,
-    "ragas_native": false
+    "ollama_available": true,
+    "ragas_native": true
   },
   "aggregate_metrics": {
-    "faithfulness": 0.8725810805956523,
-    "answer_relevancy": 0.6609105368455251,
-    "context_recall": 0.8011034568150838
+    "faithfulness": 1.0,
+    "answer_relevancy": 0.7952364517426379,
+    "context_recall": 0.9666666666666667
   },
   "thresholds": {
     "faithfulness": 0.7,
@@ -20,217 +20,217 @@
   },
   "quality_gate": {
     "faithfulness": {
-      "value": 0.8726,
+      "value": 1.0,
       "threshold": 0.7,
       "passed": true
     },
     "answer_relevancy": {
-      "value": 0.6609,
-      "threshold": 0.7,
-      "passed": false
-    },
-    "context_recall": {
-      "value": 0.8011,
+      "value": 0.7952,
       "threshold": 0.7,
       "passed": true
     },
-    "overall": "FAILED"
+    "context_recall": {
+      "value": 0.9667,
+      "threshold": 0.7,
+      "passed": true
+    },
+    "overall": "PASSED"
   },
   "per_sample_results": [
     {
       "question": "What is a neural network and what are its main components?",
-      "answer": "A neural network is a computational model inspired by the structure and function of biological neural networks in the human brain. Neural networks learn by processing training examples, adjusting weights through a process called backpropagation to minimize the difference between predicted and actual outputs.. Recurrent Neural Networks (RNNs) are neural networks designed for sequential data processing.",
+      "answer": "A neural network is a computational model inspired by the structure and function of biological neural networks in the human brain. It consists of interconnected nodes (neurons) organized in layers: an input layer, one or more hidden layers, and an output layer. Each connection between neurons has an associated weight that is adjusted during training through backpropagation to minimize differences between predicted and actual outputs.",
       "ground_truth": "A neural network is a computational model inspired by biological neural networks. Its main components are interconnected nodes (neurons) organized in layers: an input layer, hidden layers, and an output layer, with weighted connections between them.",
       "contexts": [
         "A neural network is a computational model inspired by the structure and function of biological neural networks in the human brain. It consists of interconnected nodes (neurons) organized in layers: an input layer, one or more hidden layers, and an output layer. Each connection between neurons has an associated weight that is adjusted during training. Neural networks learn by processing training examples, adjusting weights through a process called backpropagation to minimize the difference between predicted and actual outputs.",
         "Recurrent Neural Networks (RNNs) are neural networks designed for sequential data processing. Unlike feedforward networks, RNNs have connections that form cycles, allowing information to persist across time steps. This makes them suitable for tasks like language modeling, speech recognition, and time series prediction. However, standard RNNs suffer from the vanishing gradient problem, which makes learning long-range dependencies difficult. Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) architectures address this by using gating mechanisms to control information flow.",
         "Convolutional Neural Networks (CNNs) are specialized neural networks designed primarily for processing grid-like data such as images. CNNs use convolutional layers that apply learnable filters to input data, detecting features like edges, textures, and patterns. Pooling layers reduce spatial dimensions while preserving important features. The architecture typically consists of alternating convolutional and pooling layers followed by fully connected layers. CNNs have achieved state-of-the-art results in image classification, object detection, and image segmentation tasks."
       ],
-      "faithfulness": 0.8411332368850708,
-      "answer_relevancy": 0.7255420684814453,
-      "context_recall": 0.9458545446395874
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9011667853096857,
+      "context_recall": 1.0
     },
     {
       "question": "How does backpropagation work in neural networks?",
-      "answer": "A neural network is a computational model inspired by the structure and function of biological neural networks in the human brain. Neural networks learn by processing training examples, adjusting weights through a process called backpropagation to minimize the difference between predicted and actual outputs.. It consists of interconnected nodes (neurons) organized in layers: an input layer, one or more hidden layers, and an output layer.",
+      "answer": "Backpropagation is a method used in neural networks to adjust the weights of connections between neurons during training. It works as follows:\n\n1. **Forward Pass**: The input data passes through the network, and each neuron computes its output based on the weighted sum of inputs plus a bias term.\n2. **Error Calculation**: A loss function measures how far off the predicted outputs are from the actual targets.\n3. **Backward Pass**: Starting from the output layer, the error is propagated backwards through the network by calculating gradients with respect to each weight and bias in the layers.\n4. **Weight Adjustment**: Using an optimization algorithm like gradient descent or variants (e.g., Adam), these gradients are used to update the weights of the connections between neurons.\n\nThis process helps neural networks learn from their training data, adjusting parameters until they minimize the loss function, effectively improving performance on unseen data.",
       "ground_truth": "Backpropagation is a process used in training neural networks where weights are adjusted to minimize the difference between predicted and actual outputs by propagating the error gradient backwards through the network.",
       "contexts": [
         "A neural network is a computational model inspired by the structure and function of biological neural networks in the human brain. It consists of interconnected nodes (neurons) organized in layers: an input layer, one or more hidden layers, and an output layer. Each connection between neurons has an associated weight that is adjusted during training. Neural networks learn by processing training examples, adjusting weights through a process called backpropagation to minimize the difference between predicted and actual outputs.",
         "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent. The learning rate controls the step size of each update. Variants include stochastic gradient descent (SGD), which uses a single sample per update, mini-batch gradient descent, which uses a subset of samples, and Adam optimizer, which adapts learning rates for each parameter. Gradient descent is the foundation of training neural networks and many other machine learning models.",
         "Recurrent Neural Networks (RNNs) are neural networks designed for sequential data processing. Unlike feedforward networks, RNNs have connections that form cycles, allowing information to persist across time steps. This makes them suitable for tasks like language modeling, speech recognition, and time series prediction. However, standard RNNs suffer from the vanishing gradient problem, which makes learning long-range dependencies difficult. Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) architectures address this by using gating mechanisms to control information flow."
       ],
-      "faithfulness": 0.9887766242027283,
-      "answer_relevancy": 0.6700807809829712,
-      "context_recall": 0.6853549480438232
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_recall": 1.0
     },
     {
       "question": "What are the main variants of gradient descent?",
-      "answer": "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent. Variants include stochastic gradient descent (SGD), which uses a single sample per update, mini-batch gradient descent, which uses a subset of samples, and Adam optimizer, which adapts learning rates for each parameter. Gradient descent is the foundation of training neural networks and many other machine learning models.",
+      "answer": "The main variants of gradient descent include stochastic gradient descent (SGD), mini-batch gradient descent, and Adam optimizer. SGD uses a single sample per update, while mini-batch GD uses a subset of samples. Adam optimizes learning rates for each parameter based on past gradients.",
       "ground_truth": "The main variants are stochastic gradient descent (SGD) which uses a single sample per update, mini-batch gradient descent which uses a subset of samples, and Adam optimizer which adapts learning rates for each parameter.",
       "contexts": [
         "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent. The learning rate controls the step size of each update. Variants include stochastic gradient descent (SGD), which uses a single sample per update, mini-batch gradient descent, which uses a subset of samples, and Adam optimizer, which adapts learning rates for each parameter. Gradient descent is the foundation of training neural networks and many other machine learning models.",
         "Overfitting occurs when a model learns the training data too well, including its noise and outliers, leading to poor generalization on unseen data. Signs of overfitting include high training accuracy but low validation accuracy. Regularization techniques help prevent overfitting. L1 regularization (Lasso) adds the absolute value of weights to the loss function, encouraging sparsity. L2 regularization (Ridge) adds the squared weights to the loss function, penalizing large weights. Dropout randomly deactivates neurons during training, forcing the network to learn redundant representations.",
         "Recurrent Neural Networks (RNNs) are neural networks designed for sequential data processing. Unlike feedforward networks, RNNs have connections that form cycles, allowing information to persist across time steps. This makes them suitable for tasks like language modeling, speech recognition, and time series prediction. However, standard RNNs suffer from the vanishing gradient problem, which makes learning long-range dependencies difficult. Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) architectures address this by using gating mechanisms to control information flow."
       ],
-      "faithfulness": 0.9814980030059814,
-      "answer_relevancy": 0.7182925343513489,
-      "context_recall": 0.7974225878715515
+      "faithfulness": 1.0,
+      "answer_relevancy": 1.0,
+      "context_recall": 1.0
     },
     {
       "question": "What is overfitting and how can it be detected?",
-      "answer": "Overfitting occurs when a model learns the training data too well, including its noise and outliers, leading to poor generalization on unseen data. Gradient descent is the foundation of training neural networks and many other machine learning models.. Signs of overfitting include high training accuracy but low validation accuracy.",
+      "answer": "Overfitting occurs when a model learns the training data too well, including its noise and outliers, leading to poor generalization on unseen data. Signs of overfitting include high training accuracy but low validation accuracy. To detect overfitting, one should look for metrics such as high training error or low validation accuracy.",
       "ground_truth": "Overfitting occurs when a model learns the training data too well, including noise and outliers, leading to poor generalization. It can be detected by high training accuracy but low validation accuracy.",
       "contexts": [
         "Overfitting occurs when a model learns the training data too well, including its noise and outliers, leading to poor generalization on unseen data. Signs of overfitting include high training accuracy but low validation accuracy. Regularization techniques help prevent overfitting. L1 regularization (Lasso) adds the absolute value of weights to the loss function, encouraging sparsity. L2 regularization (Ridge) adds the squared weights to the loss function, penalizing large weights. Dropout randomly deactivates neurons during training, forcing the network to learn redundant representations.",
         "Convolutional Neural Networks (CNNs) are specialized neural networks designed primarily for processing grid-like data such as images. CNNs use convolutional layers that apply learnable filters to input data, detecting features like edges, textures, and patterns. Pooling layers reduce spatial dimensions while preserving important features. The architecture typically consists of alternating convolutional and pooling layers followed by fully connected layers. CNNs have achieved state-of-the-art results in image classification, object detection, and image segmentation tasks.",
         "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent. The learning rate controls the step size of each update. Variants include stochastic gradient descent (SGD), which uses a single sample per update, mini-batch gradient descent, which uses a subset of samples, and Adam optimizer, which adapts learning rates for each parameter. Gradient descent is the foundation of training neural networks and many other machine learning models."
       ],
-      "faithfulness": 0.7238590717315674,
-      "answer_relevancy": 0.7530179619789124,
-      "context_recall": 0.6871585249900818
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.83765315191973,
+      "context_recall": 1.0
     },
     {
       "question": "What is the difference between L1 and L2 regularization?",
-      "answer": "Gradient descent is the foundation of training neural networks and many other machine learning models.. Overfitting occurs when a model learns the training data too well, including its noise and outliers, leading to poor generalization on unseen data. L1 regularization (Lasso) adds the absolute value of weights to the loss function, encouraging sparsity.",
+      "answer": "L1 regularization (Lasso) adds the absolute value of weights to the loss function, encouraging sparsity by shrinking some coefficients to exactly zero. This can lead to feature selection as it effectively performs variable selection. On the other hand, L2 regularization (Ridge) adds the squared weights to the loss function, penalizing large weights but not forcing them to be exactly zero. This helps in reducing overfitting by keeping all features' coefficients within a certain range without setting any of them to zero.",
       "ground_truth": "L1 regularization (Lasso) adds the absolute value of weights to the loss function, encouraging sparsity. L2 regularization (Ridge) adds the squared weights to the loss function, penalizing large weights.",
       "contexts": [
         "Overfitting occurs when a model learns the training data too well, including its noise and outliers, leading to poor generalization on unseen data. Signs of overfitting include high training accuracy but low validation accuracy. Regularization techniques help prevent overfitting. L1 regularization (Lasso) adds the absolute value of weights to the loss function, encouraging sparsity. L2 regularization (Ridge) adds the squared weights to the loss function, penalizing large weights. Dropout randomly deactivates neurons during training, forcing the network to learn redundant representations.",
         "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent. The learning rate controls the step size of each update. Variants include stochastic gradient descent (SGD), which uses a single sample per update, mini-batch gradient descent, which uses a subset of samples, and Adam optimizer, which adapts learning rates for each parameter. Gradient descent is the foundation of training neural networks and many other machine learning models.",
         "Transfer learning is a machine learning technique where a model trained on one task is repurposed for a different but related task. Instead of training from scratch, a pre-trained model's learned features are used as a starting point. In deep learning, this typically involves using a model pre-trained on a large dataset (like ImageNet for vision or large text corpora for NLP) and fine-tuning it on a smaller, task-specific dataset. Transfer learning significantly reduces training time and data requirements, making it especially valuable when labeled data is scarce."
       ],
-      "faithfulness": 0.8558811545372009,
-      "answer_relevancy": 0.4787319600582123,
-      "context_recall": 0.7387742400169373
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9172738801822731,
+      "context_recall": 1.0
     },
     {
       "question": "What is transfer learning and why is it useful?",
-      "answer": "Transfer learning significantly reduces training time and data requirements, making it especially valuable when labeled data is scarce.. Transfer learning is a machine learning technique where a model trained on one task is repurposed for a different but related task. Gradient descent is the foundation of training neural networks and many other machine learning models.",
+      "answer": "Transfer learning involves reusing a pre-trained model on a different but related task by using its learned features as a starting point. This reduces training time and data requirements compared to training from scratch, making it valuable when labeled data is scarce.",
       "ground_truth": "Transfer learning is a technique where a model trained on one task is repurposed for a related task. It is useful because it reduces training time and data requirements, especially when labeled data is scarce.",
       "contexts": [
         "Transfer learning is a machine learning technique where a model trained on one task is repurposed for a different but related task. Instead of training from scratch, a pre-trained model's learned features are used as a starting point. In deep learning, this typically involves using a model pre-trained on a large dataset (like ImageNet for vision or large text corpora for NLP) and fine-tuning it on a smaller, task-specific dataset. Transfer learning significantly reduces training time and data requirements, making it especially valuable when labeled data is scarce.",
         "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent. The learning rate controls the step size of each update. Variants include stochastic gradient descent (SGD), which uses a single sample per update, mini-batch gradient descent, which uses a subset of samples, and Adam optimizer, which adapts learning rates for each parameter. Gradient descent is the foundation of training neural networks and many other machine learning models.",
         "Reinforcement Learning (RL) is a type of machine learning where an agent learns to make decisions by interacting with an environment. The agent takes actions, receives rewards or penalties, and adjusts its strategy (policy) to maximize cumulative reward. Key concepts include the state space, action space, reward function, and the exploration-exploitation tradeoff. Popular RL algorithms include Q-learning, Deep Q-Networks (DQN), Policy Gradient methods, and Proximal Policy Optimization (PPO). RL has been successfully applied to game playing, robotics, and recommendation systems."
       ],
-      "faithfulness": 0.8652827739715576,
-      "answer_relevancy": 0.7923129796981812,
-      "context_recall": 0.8787865042686462
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.8908834316122111,
+      "context_recall": 1.0
     },
     {
       "question": "What are the key tasks in Natural Language Processing?",
-      "answer": "Natural Language Processing (NLP) is a field of artificial intelligence focused on enabling computers to understand, interpret, and generate human language. Key NLP tasks include text classification, named entity recognition, sentiment analysis, machine translation, and question answering. Tokenization, the process of breaking text into smaller units (tokens), is a fundamental preprocessing step in NLP pipelines.",
+      "answer": "Key tasks in Natural Language Processing include text classification, named entity recognition, sentiment analysis, machine translation, and question answering.",
       "ground_truth": "Key NLP tasks include text classification, named entity recognition, sentiment analysis, machine translation, and question answering.",
       "contexts": [
         "Natural Language Processing (NLP) is a field of artificial intelligence focused on enabling computers to understand, interpret, and generate human language. Key NLP tasks include text classification, named entity recognition, sentiment analysis, machine translation, and question answering. Modern NLP relies heavily on transformer-based models like BERT, GPT, and T5. Tokenization, the process of breaking text into smaller units (tokens), is a fundamental preprocessing step in NLP pipelines.",
         "The Transformer architecture, introduced in the 2017 paper 'Attention Is All You Need', revolutionized NLP by replacing recurrence with self-attention mechanisms. Transformers process all positions in a sequence simultaneously, enabling parallel computation. The architecture consists of an encoder-decoder structure with multi-head attention layers, feed-forward networks, and layer normalization. Key innovations include positional encoding to represent sequence order and scaled dot-product attention. Transformers are the foundation of models like BERT, GPT, T5, and are now applied beyond NLP to vision, audio, and multimodal tasks.",
         "Transfer learning is a machine learning technique where a model trained on one task is repurposed for a different but related task. Instead of training from scratch, a pre-trained model's learned features are used as a starting point. In deep learning, this typically involves using a model pre-trained on a large dataset (like ImageNet for vision or large text corpora for NLP) and fine-tuning it on a smaller, task-specific dataset. Transfer learning significantly reduces training time and data requirements, making it especially valuable when labeled data is scarce."
       ],
-      "faithfulness": 0.9623075127601624,
-      "answer_relevancy": 0.6738442182540894,
-      "context_recall": 0.7520850300788879
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9838064936412926,
+      "context_recall": 1.0
     },
     {
       "question": "What is tokenization in NLP?",
-      "answer": "Tokenization, the process of breaking text into smaller units (tokens), is a fundamental preprocessing step in NLP pipelines.. The Transformer architecture, introduced in the 2017 paper 'Attention Is All You Need', revolutionized NLP by replacing recurrence with self-attention mechanisms. Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent.",
+      "answer": "Tokenization in NLP involves breaking down text into smaller units called tokens, typically words or subwords. This preprocessing step is crucial as it simplifies input data for further processing tasks like classification, named entity recognition, and sentiment analysis.",
       "ground_truth": "Tokenization is the process of breaking text into smaller units called tokens. It is a fundamental preprocessing step in NLP pipelines.",
       "contexts": [
         "Natural Language Processing (NLP) is a field of artificial intelligence focused on enabling computers to understand, interpret, and generate human language. Key NLP tasks include text classification, named entity recognition, sentiment analysis, machine translation, and question answering. Modern NLP relies heavily on transformer-based models like BERT, GPT, and T5. Tokenization, the process of breaking text into smaller units (tokens), is a fundamental preprocessing step in NLP pipelines.",
         "The Transformer architecture, introduced in the 2017 paper 'Attention Is All You Need', revolutionized NLP by replacing recurrence with self-attention mechanisms. Transformers process all positions in a sequence simultaneously, enabling parallel computation. The architecture consists of an encoder-decoder structure with multi-head attention layers, feed-forward networks, and layer normalization. Key innovations include positional encoding to represent sequence order and scaled dot-product attention. Transformers are the foundation of models like BERT, GPT, T5, and are now applied beyond NLP to vision, audio, and multimodal tasks.",
         "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent. The learning rate controls the step size of each update. Variants include stochastic gradient descent (SGD), which uses a single sample per update, mini-batch gradient descent, which uses a subset of samples, and Adam optimizer, which adapts learning rates for each parameter. Gradient descent is the foundation of training neural networks and many other machine learning models."
       ],
-      "faithfulness": 0.7745102643966675,
-      "answer_relevancy": 0.7790375351905823,
-      "context_recall": 0.724727988243103
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9546595408562711,
+      "context_recall": 1.0
     },
     {
       "question": "What are CNNs primarily designed for?",
-      "answer": "Convolutional Neural Networks (CNNs) are specialized neural networks designed primarily for processing grid-like data such as images. CNNs use convolutional layers that apply learnable filters to input data, detecting features like edges, textures, and patterns. CNNs have achieved state-of-the-art results in image classification, object detection, and image segmentation tasks.",
+      "answer": "CNNs are primarily designed for processing grid-like data such as images.",
       "ground_truth": "Convolutional Neural Networks are designed primarily for processing grid-like data such as images. They use convolutional layers with learnable filters to detect features like edges, textures, and patterns.",
       "contexts": [
         "Convolutional Neural Networks (CNNs) are specialized neural networks designed primarily for processing grid-like data such as images. CNNs use convolutional layers that apply learnable filters to input data, detecting features like edges, textures, and patterns. Pooling layers reduce spatial dimensions while preserving important features. The architecture typically consists of alternating convolutional and pooling layers followed by fully connected layers. CNNs have achieved state-of-the-art results in image classification, object detection, and image segmentation tasks.",
         "A neural network is a computational model inspired by the structure and function of biological neural networks in the human brain. It consists of interconnected nodes (neurons) organized in layers: an input layer, one or more hidden layers, and an output layer. Each connection between neurons has an associated weight that is adjusted during training. Neural networks learn by processing training examples, adjusting weights through a process called backpropagation to minimize the difference between predicted and actual outputs.",
         "The Transformer architecture, introduced in the 2017 paper 'Attention Is All You Need', revolutionized NLP by replacing recurrence with self-attention mechanisms. Transformers process all positions in a sequence simultaneously, enabling parallel computation. The architecture consists of an encoder-decoder structure with multi-head attention layers, feed-forward networks, and layer normalization. Key innovations include positional encoding to represent sequence order and scaled dot-product attention. Transformers are the foundation of models like BERT, GPT, T5, and are now applied beyond NLP to vision, audio, and multimodal tasks."
       ],
-      "faithfulness": 0.930534303188324,
-      "answer_relevancy": 0.6160749793052673,
-      "context_recall": 0.8380354046821594
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9453473548008032,
+      "context_recall": 1.0
     },
     {
       "question": "What is the vanishing gradient problem in RNNs?",
-      "answer": "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent. However, standard RNNs suffer from the vanishing gradient problem, which makes learning long-range dependencies difficult. Gradient descent is the foundation of training neural networks and many other machine learning models.",
+      "answer": "The vanishing gradient problem in RNNs occurs because as information flows through long sequences of time steps, gradients can become very small or even zero. This makes it difficult for the model to learn dependencies across longer intervals due to diminishing returns on the learning process.",
       "ground_truth": "The vanishing gradient problem makes it difficult for standard RNNs to learn long-range dependencies in sequential data. LSTM and GRU architectures address this by using gating mechanisms to control information flow.",
       "contexts": [
         "Recurrent Neural Networks (RNNs) are neural networks designed for sequential data processing. Unlike feedforward networks, RNNs have connections that form cycles, allowing information to persist across time steps. This makes them suitable for tasks like language modeling, speech recognition, and time series prediction. However, standard RNNs suffer from the vanishing gradient problem, which makes learning long-range dependencies difficult. Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) architectures address this by using gating mechanisms to control information flow.",
         "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent. The learning rate controls the step size of each update. Variants include stochastic gradient descent (SGD), which uses a single sample per update, mini-batch gradient descent, which uses a subset of samples, and Adam optimizer, which adapts learning rates for each parameter. Gradient descent is the foundation of training neural networks and many other machine learning models.",
         "Overfitting occurs when a model learns the training data too well, including its noise and outliers, leading to poor generalization on unseen data. Signs of overfitting include high training accuracy but low validation accuracy. Regularization techniques help prevent overfitting. L1 regularization (Lasso) adds the absolute value of weights to the loss function, encouraging sparsity. L2 regularization (Ridge) adds the squared weights to the loss function, penalizing large weights. Dropout randomly deactivates neurons during training, forcing the network to learn redundant representations."
       ],
-      "faithfulness": 0.8295697569847107,
-      "answer_relevancy": 0.6506554484367371,
-      "context_recall": 0.8364187479019165
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
     },
     {
       "question": "What was the key innovation of the Transformer architecture?",
-      "answer": "The Transformer architecture, introduced in the 2017 paper 'Attention Is All You Need', revolutionized NLP by replacing recurrence with self-attention mechanisms. The architecture consists of an encoder-decoder structure with multi-head attention layers, feed-forward networks, and layer normalization. Transformers are the foundation of models like BERT, GPT, T5, and are now applied beyond NLP to vision, audio, and multimodal tasks.",
+      "answer": "The key innovation of the Transformer architecture was replacing recurrence with self-attention mechanisms to enable parallel computation and simultaneous processing of all positions in a sequence.",
       "ground_truth": "The Transformer replaced recurrence with self-attention mechanisms, allowing all positions in a sequence to be processed simultaneously and enabling parallel computation. It was introduced in the 2017 paper 'Attention Is All You Need'.",
       "contexts": [
         "The Transformer architecture, introduced in the 2017 paper 'Attention Is All You Need', revolutionized NLP by replacing recurrence with self-attention mechanisms. Transformers process all positions in a sequence simultaneously, enabling parallel computation. The architecture consists of an encoder-decoder structure with multi-head attention layers, feed-forward networks, and layer normalization. Key innovations include positional encoding to represent sequence order and scaled dot-product attention. Transformers are the foundation of models like BERT, GPT, T5, and are now applied beyond NLP to vision, audio, and multimodal tasks.",
         "Convolutional Neural Networks (CNNs) are specialized neural networks designed primarily for processing grid-like data such as images. CNNs use convolutional layers that apply learnable filters to input data, detecting features like edges, textures, and patterns. Pooling layers reduce spatial dimensions while preserving important features. The architecture typically consists of alternating convolutional and pooling layers followed by fully connected layers. CNNs have achieved state-of-the-art results in image classification, object detection, and image segmentation tasks.",
         "Natural Language Processing (NLP) is a field of artificial intelligence focused on enabling computers to understand, interpret, and generate human language. Key NLP tasks include text classification, named entity recognition, sentiment analysis, machine translation, and question answering. Modern NLP relies heavily on transformer-based models like BERT, GPT, and T5. Tokenization, the process of breaking text into smaller units (tokens), is a fundamental preprocessing step in NLP pipelines."
       ],
-      "faithfulness": 0.9625662565231323,
-      "answer_relevancy": 0.4286717176437378,
-      "context_recall": 0.7761135101318359
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.0,
+      "context_recall": 1.0
     },
     {
       "question": "What is reinforcement learning and how does an agent learn?",
-      "answer": "Reinforcement Learning (RL) is a type of machine learning where an agent learns to make decisions by interacting with an environment. Gradient descent is the foundation of training neural networks and many other machine learning models.. Transfer learning significantly reduces training time and data requirements, making it especially valuable when labeled data is scarce.",
+      "answer": "Reinforcement Learning (RL) is a type of machine learning where an agent learns to make decisions by interacting with an environment. The agent takes actions, receives rewards or penalties, and adjusts its strategy (policy) to maximize cumulative reward. Key concepts include the state space, action space, reward function, and the exploration-exploitation tradeoff. Popular RL algorithms include Q-learning, Deep Q-Networks (DQN), Policy Gradient methods, and Proximal Policy Optimization (PPO).",
       "ground_truth": "Reinforcement Learning is a type of machine learning where an agent learns to make decisions by interacting with an environment, taking actions, receiving rewards or penalties, and adjusting its policy to maximize cumulative reward.",
       "contexts": [
         "Reinforcement Learning (RL) is a type of machine learning where an agent learns to make decisions by interacting with an environment. The agent takes actions, receives rewards or penalties, and adjusts its strategy (policy) to maximize cumulative reward. Key concepts include the state space, action space, reward function, and the exploration-exploitation tradeoff. Popular RL algorithms include Q-learning, Deep Q-Networks (DQN), Policy Gradient methods, and Proximal Policy Optimization (PPO). RL has been successfully applied to game playing, robotics, and recommendation systems.",
         "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent. The learning rate controls the step size of each update. Variants include stochastic gradient descent (SGD), which uses a single sample per update, mini-batch gradient descent, which uses a subset of samples, and Adam optimizer, which adapts learning rates for each parameter. Gradient descent is the foundation of training neural networks and many other machine learning models.",
         "Transfer learning is a machine learning technique where a model trained on one task is repurposed for a different but related task. Instead of training from scratch, a pre-trained model's learned features are used as a starting point. In deep learning, this typically involves using a model pre-trained on a large dataset (like ImageNet for vision or large text corpora for NLP) and fine-tuning it on a smaller, task-specific dataset. Transfer learning significantly reduces training time and data requirements, making it especially valuable when labeled data is scarce."
       ],
-      "faithfulness": 0.8651639819145203,
-      "answer_relevancy": 0.6766370534896851,
-      "context_recall": 0.787971019744873
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9032186633165273,
+      "context_recall": 1.0
     },
     {
       "question": "What are the popular reinforcement learning algorithms?",
-      "answer": "Reinforcement Learning (RL) is a type of machine learning where an agent learns to make decisions by interacting with an environment. The learning rate controls the step size of each update. Gradient descent is the foundation of training neural networks and many other machine learning models.",
+      "answer": "Popular reinforcement learning algorithms include Q-learning, Deep Q-Networks (DQN), Policy Gradient methods, and Proximal Policy Optimization (PPO).",
       "ground_truth": "Popular RL algorithms include Q-learning, Deep Q-Networks (DQN), Policy Gradient methods, and Proximal Policy Optimization (PPO).",
       "contexts": [
         "Reinforcement Learning (RL) is a type of machine learning where an agent learns to make decisions by interacting with an environment. The agent takes actions, receives rewards or penalties, and adjusts its strategy (policy) to maximize cumulative reward. Key concepts include the state space, action space, reward function, and the exploration-exploitation tradeoff. Popular RL algorithms include Q-learning, Deep Q-Networks (DQN), Policy Gradient methods, and Proximal Policy Optimization (PPO). RL has been successfully applied to game playing, robotics, and recommendation systems.",
         "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent. The learning rate controls the step size of each update. Variants include stochastic gradient descent (SGD), which uses a single sample per update, mini-batch gradient descent, which uses a subset of samples, and Adam optimizer, which adapts learning rates for each parameter. Gradient descent is the foundation of training neural networks and many other machine learning models.",
         "Recurrent Neural Networks (RNNs) are neural networks designed for sequential data processing. Unlike feedforward networks, RNNs have connections that form cycles, allowing information to persist across time steps. This makes them suitable for tasks like language modeling, speech recognition, and time series prediction. However, standard RNNs suffer from the vanishing gradient problem, which makes learning long-range dependencies difficult. Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) architectures address this by using gating mechanisms to control information flow."
       ],
-      "faithfulness": 0.8739137649536133,
-      "answer_relevancy": 0.6436165571212769,
-      "context_recall": 0.8388419151306152
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9887351903812528,
+      "context_recall": 1.0
     },
     {
       "question": "How do Generative Adversarial Networks work?",
-      "answer": "Generative Adversarial Networks (GANs) consist of two neural networks — a generator and a discriminator — that are trained simultaneously in a competitive process. Through this adversarial training, the generator progressively improves at creating realistic data. A neural network is a computational model inspired by the structure and function of biological neural networks in the human brain.",
+      "answer": "Generative Adversarial Networks (GANs) consist of two neural networks - a generator and a discriminator that are trained simultaneously in an adversarial process. The generator creates synthetic data samples, while the discriminator tries to distinguish between real and generated samples. Through this competition, the generator progressively improves at creating realistic data.",
       "ground_truth": "GANs consist of two neural networks — a generator that creates synthetic data and a discriminator that distinguishes between real and generated data. Through adversarial training, the generator progressively improves at creating realistic data.",
       "contexts": [
         "Generative Adversarial Networks (GANs) consist of two neural networks — a generator and a discriminator — that are trained simultaneously in a competitive process. The generator creates synthetic data samples, while the discriminator attempts to distinguish between real and generated samples. Through this adversarial training, the generator progressively improves at creating realistic data. GANs have been widely used for image generation, style transfer, data augmentation, and super-resolution. Notable GAN variants include DCGAN, StyleGAN, and CycleGAN.",
         "Transfer learning is a machine learning technique where a model trained on one task is repurposed for a different but related task. Instead of training from scratch, a pre-trained model's learned features are used as a starting point. In deep learning, this typically involves using a model pre-trained on a large dataset (like ImageNet for vision or large text corpora for NLP) and fine-tuning it on a smaller, task-specific dataset. Transfer learning significantly reduces training time and data requirements, making it especially valuable when labeled data is scarce.",
         "A neural network is a computational model inspired by the structure and function of biological neural networks in the human brain. It consists of interconnected nodes (neurons) organized in layers: an input layer, one or more hidden layers, and an output layer. Each connection between neurons has an associated weight that is adjusted during training. Neural networks learn by processing training examples, adjusting weights through a process called backpropagation to minimize the difference between predicted and actual outputs."
       ],
-      "faithfulness": 0.8298181295394897,
-      "answer_relevancy": 0.7527251243591309,
-      "context_recall": 0.8744703531265259
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.6669143793770407,
+      "context_recall": 1.0
     },
     {
       "question": "What are some practical applications of GANs?",
-      "answer": "Generative Adversarial Networks (GANs) consist of two neural networks — a generator and a discriminator — that are trained simultaneously in a competitive process. Convolutional Neural Networks (CNNs) are specialized neural networks designed primarily for processing grid-like data such as images. The architecture typically consists of alternating convolutional and pooling layers followed by fully connected layers.",
+      "answer": "GANs have been widely used for image generation, style transfer, data augmentation, and super-resolution.",
       "ground_truth": "GANs have been widely used for image generation, style transfer, data augmentation, and super-resolution. Notable variants include DCGAN, StyleGAN, and CycleGAN.",
       "contexts": [
         "Generative Adversarial Networks (GANs) consist of two neural networks — a generator and a discriminator — that are trained simultaneously in a competitive process. The generator creates synthetic data samples, while the discriminator attempts to distinguish between real and generated samples. Through this adversarial training, the generator progressively improves at creating realistic data. GANs have been widely used for image generation, style transfer, data augmentation, and super-resolution. Notable GAN variants include DCGAN, StyleGAN, and CycleGAN.",
         "Convolutional Neural Networks (CNNs) are specialized neural networks designed primarily for processing grid-like data such as images. CNNs use convolutional layers that apply learnable filters to input data, detecting features like edges, textures, and patterns. Pooling layers reduce spatial dimensions while preserving important features. The architecture typically consists of alternating convolutional and pooling layers followed by fully connected layers. CNNs have achieved state-of-the-art results in image classification, object detection, and image segmentation tasks.",
         "Recurrent Neural Networks (RNNs) are neural networks designed for sequential data processing. Unlike feedforward networks, RNNs have connections that form cycles, allowing information to persist across time steps. This makes them suitable for tasks like language modeling, speech recognition, and time series prediction. However, standard RNNs suffer from the vanishing gradient problem, which makes learning long-range dependencies difficult. Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) architectures address this by using gating mechanisms to control information flow."
       ],
-      "faithfulness": 0.8039013743400574,
-      "answer_relevancy": 0.5544171333312988,
-      "context_recall": 0.8545365333557129
+      "faithfulness": 1.0,
+      "answer_relevancy": 0.9388879047424807,
+      "context_recall": 0.5
     }
   ]
 }
