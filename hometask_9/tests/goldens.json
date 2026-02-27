@@ -1,0 +1,146 @@
+{
+  "knowledge_base": [
+    {
+      "id": "doc_1",
+      "title": "Neural Networks",
+      "content": "A neural network is a computational model inspired by the structure and function of biological neural networks in the human brain. It consists of interconnected nodes (neurons) organized in layers: an input layer, one or more hidden layers, and an output layer. Each connection between neurons has an associated weight that is adjusted during training. Neural networks learn by processing training examples, adjusting weights through a process called backpropagation to minimize the difference between predicted and actual outputs."
+    },
+    {
+      "id": "doc_2",
+      "title": "Gradient Descent",
+      "content": "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent. The learning rate controls the step size of each update. Variants include stochastic gradient descent (SGD), which uses a single sample per update, mini-batch gradient descent, which uses a subset of samples, and Adam optimizer, which adapts learning rates for each parameter. Gradient descent is the foundation of training neural networks and many other machine learning models."
+    },
+    {
+      "id": "doc_3",
+      "title": "Overfitting and Regularization",
+      "content": "Overfitting occurs when a model learns the training data too well, including its noise and outliers, leading to poor generalization on unseen data. Signs of overfitting include high training accuracy but low validation accuracy. Regularization techniques help prevent overfitting. L1 regularization (Lasso) adds the absolute value of weights to the loss function, encouraging sparsity. L2 regularization (Ridge) adds the squared weights to the loss function, penalizing large weights. Dropout randomly deactivates neurons during training, forcing the network to learn redundant representations."
+    },
+    {
+      "id": "doc_4",
+      "title": "Transfer Learning",
+      "content": "Transfer learning is a machine learning technique where a model trained on one task is repurposed for a different but related task. Instead of training from scratch, a pre-trained model's learned features are used as a starting point. In deep learning, this typically involves using a model pre-trained on a large dataset (like ImageNet for vision or large text corpora for NLP) and fine-tuning it on a smaller, task-specific dataset. Transfer learning significantly reduces training time and data requirements, making it especially valuable when labeled data is scarce."
+    },
+    {
+      "id": "doc_5",
+      "title": "Natural Language Processing",
+      "content": "Natural Language Processing (NLP) is a field of artificial intelligence focused on enabling computers to understand, interpret, and generate human language. Key NLP tasks include text classification, named entity recognition, sentiment analysis, machine translation, and question answering. Modern NLP relies heavily on transformer-based models like BERT, GPT, and T5. Tokenization, the process of breaking text into smaller units (tokens), is a fundamental preprocessing step in NLP pipelines."
+    },
+    {
+      "id": "doc_6",
+      "title": "Convolutional Neural Networks",
+      "content": "Convolutional Neural Networks (CNNs) are specialized neural networks designed primarily for processing grid-like data such as images. CNNs use convolutional layers that apply learnable filters to input data, detecting features like edges, textures, and patterns. Pooling layers reduce spatial dimensions while preserving important features. The architecture typically consists of alternating convolutional and pooling layers followed by fully connected layers. CNNs have achieved state-of-the-art results in image classification, object detection, and image segmentation tasks."
+    },
+    {
+      "id": "doc_7",
+      "title": "Recurrent Neural Networks",
+      "content": "Recurrent Neural Networks (RNNs) are neural networks designed for sequential data processing. Unlike feedforward networks, RNNs have connections that form cycles, allowing information to persist across time steps. This makes them suitable for tasks like language modeling, speech recognition, and time series prediction. However, standard RNNs suffer from the vanishing gradient problem, which makes learning long-range dependencies difficult. Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) architectures address this by using gating mechanisms to control information flow."
+    },
+    {
+      "id": "doc_8",
+      "title": "Transformer Architecture",
+      "content": "The Transformer architecture, introduced in the 2017 paper 'Attention Is All You Need', revolutionized NLP by replacing recurrence with self-attention mechanisms. Transformers process all positions in a sequence simultaneously, enabling parallel computation. The architecture consists of an encoder-decoder structure with multi-head attention layers, feed-forward networks, and layer normalization. Key innovations include positional encoding to represent sequence order and scaled dot-product attention. Transformers are the foundation of models like BERT, GPT, T5, and are now applied beyond NLP to vision, audio, and multimodal tasks."
+    },
+    {
+      "id": "doc_9",
+      "title": "Reinforcement Learning",
+      "content": "Reinforcement Learning (RL) is a type of machine learning where an agent learns to make decisions by interacting with an environment. The agent takes actions, receives rewards or penalties, and adjusts its strategy (policy) to maximize cumulative reward. Key concepts include the state space, action space, reward function, and the exploration-exploitation tradeoff. Popular RL algorithms include Q-learning, Deep Q-Networks (DQN), Policy Gradient methods, and Proximal Policy Optimization (PPO). RL has been successfully applied to game playing, robotics, and recommendation systems."
+    },
+    {
+      "id": "doc_10",
+      "title": "Generative Adversarial Networks",
+      "content": "Generative Adversarial Networks (GANs) consist of two neural networks — a generator and a discriminator — that are trained simultaneously in a competitive process. The generator creates synthetic data samples, while the discriminator attempts to distinguish between real and generated samples. Through this adversarial training, the generator progressively improves at creating realistic data. GANs have been widely used for image generation, style transfer, data augmentation, and super-resolution. Notable GAN variants include DCGAN, StyleGAN, and CycleGAN."
+    }
+  ],
+  "golden_examples": [
+    {
+      "id": 1,
+      "question": "What is a neural network and what are its main components?",
+      "ground_truth": "A neural network is a computational model inspired by biological neural networks. Its main components are interconnected nodes (neurons) organized in layers: an input layer, hidden layers, and an output layer, with weighted connections between them.",
+      "expected_context_ids": ["doc_1"]
+    },
+    {
+      "id": 2,
+      "question": "How does backpropagation work in neural networks?",
+      "ground_truth": "Backpropagation is a process used in training neural networks where weights are adjusted to minimize the difference between predicted and actual outputs by propagating the error gradient backwards through the network.",
+      "expected_context_ids": ["doc_1"]
+    },
+    {
+      "id": 3,
+      "question": "What are the main variants of gradient descent?",
+      "ground_truth": "The main variants are stochastic gradient descent (SGD) which uses a single sample per update, mini-batch gradient descent which uses a subset of samples, and Adam optimizer which adapts learning rates for each parameter.",
+      "expected_context_ids": ["doc_2"]
+    },
+    {
+      "id": 4,
+      "question": "What is overfitting and how can it be detected?",
+      "ground_truth": "Overfitting occurs when a model learns the training data too well, including noise and outliers, leading to poor generalization. It can be detected by high training accuracy but low validation accuracy.",
+      "expected_context_ids": ["doc_3"]
+    },
+    {
+      "id": 5,
+      "question": "What is the difference between L1 and L2 regularization?",
+      "ground_truth": "L1 regularization (Lasso) adds the absolute value of weights to the loss function, encouraging sparsity. L2 regularization (Ridge) adds the squared weights to the loss function, penalizing large weights.",
+      "expected_context_ids": ["doc_3"]
+    },
+    {
+      "id": 6,
+      "question": "What is transfer learning and why is it useful?",
+      "ground_truth": "Transfer learning is a technique where a model trained on one task is repurposed for a related task. It is useful because it reduces training time and data requirements, especially when labeled data is scarce.",
+      "expected_context_ids": ["doc_4"]
+    },
+    {
+      "id": 7,
+      "question": "What are the key tasks in Natural Language Processing?",
+      "ground_truth": "Key NLP tasks include text classification, named entity recognition, sentiment analysis, machine translation, and question answering.",
+      "expected_context_ids": ["doc_5"]
+    },
+    {
+      "id": 8,
+      "question": "What is tokenization in NLP?",
+      "ground_truth": "Tokenization is the process of breaking text into smaller units called tokens. It is a fundamental preprocessing step in NLP pipelines.",
+      "expected_context_ids": ["doc_5"]
+    },
+    {
+      "id": 9,
+      "question": "What are CNNs primarily designed for?",
+      "ground_truth": "Convolutional Neural Networks are designed primarily for processing grid-like data such as images. They use convolutional layers with learnable filters to detect features like edges, textures, and patterns.",
+      "expected_context_ids": ["doc_6"]
+    },
+    {
+      "id": 10,
+      "question": "What is the vanishing gradient problem in RNNs?",
+      "ground_truth": "The vanishing gradient problem makes it difficult for standard RNNs to learn long-range dependencies in sequential data. LSTM and GRU architectures address this by using gating mechanisms to control information flow.",
+      "expected_context_ids": ["doc_7"]
+    },
+    {
+      "id": 11,
+      "question": "What was the key innovation of the Transformer architecture?",
+      "ground_truth": "The Transformer replaced recurrence with self-attention mechanisms, allowing all positions in a sequence to be processed simultaneously and enabling parallel computation. It was introduced in the 2017 paper 'Attention Is All You Need'.",
+      "expected_context_ids": ["doc_8"]
+    },
+    {
+      "id": 12,
+      "question": "What is reinforcement learning and how does an agent learn?",
+      "ground_truth": "Reinforcement Learning is a type of machine learning where an agent learns to make decisions by interacting with an environment, taking actions, receiving rewards or penalties, and adjusting its policy to maximize cumulative reward.",
+      "expected_context_ids": ["doc_9"]
+    },
+    {
+      "id": 13,
+      "question": "What are the popular reinforcement learning algorithms?",
+      "ground_truth": "Popular RL algorithms include Q-learning, Deep Q-Networks (DQN), Policy Gradient methods, and Proximal Policy Optimization (PPO).",
+      "expected_context_ids": ["doc_9"]
+    },
+    {
+      "id": 14,
+      "question": "How do Generative Adversarial Networks work?",
+      "ground_truth": "GANs consist of two neural networks — a generator that creates synthetic data and a discriminator that distinguishes between real and generated data. Through adversarial training, the generator progressively improves at creating realistic data.",
+      "expected_context_ids": ["doc_10"]
+    },
+    {
+      "id": 15,
+      "question": "What are some practical applications of GANs?",
+      "ground_truth": "GANs have been widely used for image generation, style transfer, data augmentation, and super-resolution. Notable variants include DCGAN, StyleGAN, and CycleGAN.",
+      "expected_context_ids": ["doc_10"]
+    }
+  ]
+}
