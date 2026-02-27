@@ -10,7 +10,7 @@
   },
   "aggregate_metrics": {
     "faithfulness": 1.0,
-    "answer_relevancy": 0.7952364517426379,
+    "answer_relevancy": 0.7876451511326024,
     "context_recall": 0.9666666666666667
   },
   "thresholds": {
@@ -25,7 +25,7 @@
       "passed": true
     },
     "answer_relevancy": {
-      "value": 0.7952,
+      "value": 0.7876,
       "threshold": 0.7,
       "passed": true
     },
@@ -39,7 +39,7 @@
   "per_sample_results": [
     {
       "question": "What is a neural network and what are its main components?",
-      "answer": "A neural network is a computational model inspired by the structure and function of biological neural networks in the human brain. It consists of interconnected nodes (neurons) organized in layers: an input layer, one or more hidden layers, and an output layer. Each connection between neurons has an associated weight that is adjusted during training through backpropagation to minimize differences between predicted and actual outputs.",
+      "answer": "A neural network is a computational model inspired by the structure and function of biological neural networks in the human brain. It consists of interconnected nodes (neurons) organized in layers: an input layer, one or more hidden layers, and an output layer. Each connection between neurons has an associated weight that is adjusted during training.",
       "ground_truth": "A neural network is a computational model inspired by biological neural networks. Its main components are interconnected nodes (neurons) organized in layers: an input layer, hidden layers, and an output layer, with weighted connections between them.",
       "contexts": [
         "A neural network is a computational model inspired by the structure and function of biological neural networks in the human brain. It consists of interconnected nodes (neurons) organized in layers: an input layer, one or more hidden layers, and an output layer. Each connection between neurons has an associated weight that is adjusted during training. Neural networks learn by processing training examples, adjusting weights through a process called backpropagation to minimize the difference between predicted and actual outputs.",
@@ -52,7 +52,7 @@
     },
     {
       "question": "How does backpropagation work in neural networks?",
-      "answer": "Backpropagation is a method used in neural networks to adjust the weights of connections between neurons during training. It works as follows:\n\n1. **Forward Pass**: The input data passes through the network, and each neuron computes its output based on the weighted sum of inputs plus a bias term.\n2. **Error Calculation**: A loss function measures how far off the predicted outputs are from the actual targets.\n3. **Backward Pass**: Starting from the output layer, the error is propagated backwards through the network by calculating gradients with respect to each weight and bias in the layers.\n4. **Weight Adjustment**: Using an optimization algorithm like gradient descent or variants (e.g., Adam), these gradients are used to update the weights of the connections between neurons.\n\nThis process helps neural networks learn from their training data, adjusting parameters until they minimize the loss function, effectively improving performance on unseen data.",
+      "answer": "Backpropagation is a method used in training neural networks to adjust the weights of connections between neurons. It works by calculating the error gradient of each neuron's output with respect to its inputs, then propagating this error backward through the network layers. This process helps minimize the loss function, which measures how well the model predicts the target outputs given the input data. By adjusting the weights in the direction that reduces this error, backpropagation enables neural networks to learn and improve their performance on unseen data.",
       "ground_truth": "Backpropagation is a process used in training neural networks where weights are adjusted to minimize the difference between predicted and actual outputs by propagating the error gradient backwards through the network.",
       "contexts": [
         "A neural network is a computational model inspired by the structure and function of biological neural networks in the human brain. It consists of interconnected nodes (neurons) organized in layers: an input layer, one or more hidden layers, and an output layer. Each connection between neurons has an associated weight that is adjusted during training. Neural networks learn by processing training examples, adjusting weights through a process called backpropagation to minimize the difference between predicted and actual outputs.",
@@ -60,7 +60,7 @@
         "Recurrent Neural Networks (RNNs) are neural networks designed for sequential data processing. Unlike feedforward networks, RNNs have connections that form cycles, allowing information to persist across time steps. This makes them suitable for tasks like language modeling, speech recognition, and time series prediction. However, standard RNNs suffer from the vanishing gradient problem, which makes learning long-range dependencies difficult. Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) architectures address this by using gating mechanisms to control information flow."
       ],
       "faithfulness": 1.0,
-      "answer_relevancy": 1.0,
+      "answer_relevancy": 0.8636625972284246,
       "context_recall": 1.0
     },
     {
@@ -78,7 +78,7 @@
     },
     {
       "question": "What is overfitting and how can it be detected?",
-      "answer": "Overfitting occurs when a model learns the training data too well, including its noise and outliers, leading to poor generalization on unseen data. Signs of overfitting include high training accuracy but low validation accuracy. To detect overfitting, one should look for metrics such as high training error or low validation accuracy.",
+      "answer": "Overfitting occurs when a model learns the training data too well, including its noise and outliers, leading to poor generalization on unseen data. Signs of overfitting include high training accuracy but low validation accuracy. Regularization techniques help prevent overfitting by adding penalties for large weights or sparsity in L1 regularization (Lasso) and squared weights in L2 regularization (Ridge). Dropout randomly deactivates neurons during training to force the network to learn redundant representations.",
       "ground_truth": "Overfitting occurs when a model learns the training data too well, including noise and outliers, leading to poor generalization. It can be detected by high training accuracy but low validation accuracy.",
       "contexts": [
         "Overfitting occurs when a model learns the training data too well, including its noise and outliers, leading to poor generalization on unseen data. Signs of overfitting include high training accuracy but low validation accuracy. Regularization techniques help prevent overfitting. L1 regularization (Lasso) adds the absolute value of weights to the loss function, encouraging sparsity. L2 regularization (Ridge) adds the squared weights to the loss function, penalizing large weights. Dropout randomly deactivates neurons during training, forcing the network to learn redundant representations.",
@@ -86,12 +86,12 @@
         "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent. The learning rate controls the step size of each update. Variants include stochastic gradient descent (SGD), which uses a single sample per update, mini-batch gradient descent, which uses a subset of samples, and Adam optimizer, which adapts learning rates for each parameter. Gradient descent is the foundation of training neural networks and many other machine learning models."
       ],
       "faithfulness": 1.0,
-      "answer_relevancy": 0.83765315191973,
+      "answer_relevancy": 0.8243964948256997,
       "context_recall": 1.0
     },
     {
       "question": "What is the difference between L1 and L2 regularization?",
-      "answer": "L1 regularization (Lasso) adds the absolute value of weights to the loss function, encouraging sparsity by shrinking some coefficients to exactly zero. This can lead to feature selection as it effectively performs variable selection. On the other hand, L2 regularization (Ridge) adds the squared weights to the loss function, penalizing large weights but not forcing them to be exactly zero. This helps in reducing overfitting by keeping all features' coefficients within a certain range without setting any of them to zero.",
+      "answer": "L1 regularization (Lasso) adds the absolute value of weights to the loss function, encouraging sparsity by shrinking some weights to exactly zero. This can lead to feature selection as it effectively performs variable selection in a way that only the most important features contribute to the model.\n\nOn the other hand, L2 regularization (Ridge) adds the squared weights to the loss function, penalizing large weights but not forcing them to be exactly zero. This helps prevent overfitting by keeping all coefficients small and reduces the complexity of the model without eliminating any features entirely.",
       "ground_truth": "L1 regularization (Lasso) adds the absolute value of weights to the loss function, encouraging sparsity. L2 regularization (Ridge) adds the squared weights to the loss function, penalizing large weights.",
       "contexts": [
         "Overfitting occurs when a model learns the training data too well, including its noise and outliers, leading to poor generalization on unseen data. Signs of overfitting include high training accuracy but low validation accuracy. Regularization techniques help prevent overfitting. L1 regularization (Lasso) adds the absolute value of weights to the loss function, encouraging sparsity. L2 regularization (Ridge) adds the squared weights to the loss function, penalizing large weights. Dropout randomly deactivates neurons during training, forcing the network to learn redundant representations.",
@@ -99,7 +99,7 @@
         "Transfer learning is a machine learning technique where a model trained on one task is repurposed for a different but related task. Instead of training from scratch, a pre-trained model's learned features are used as a starting point. In deep learning, this typically involves using a model pre-trained on a large dataset (like ImageNet for vision or large text corpora for NLP) and fine-tuning it on a smaller, task-specific dataset. Transfer learning significantly reduces training time and data requirements, making it especially valuable when labeled data is scarce."
       ],
       "faithfulness": 1.0,
-      "answer_relevancy": 0.9172738801822731,
+      "answer_relevancy": 0.930377610785409,
       "context_recall": 1.0
     },
     {
@@ -117,7 +117,7 @@
     },
     {
       "question": "What are the key tasks in Natural Language Processing?",
-      "answer": "Key tasks in Natural Language Processing include text classification, named entity recognition, sentiment analysis, machine translation, and question answering.",
+      "answer": "Key tasks in Natural Language Processing (NLP) include text classification, named entity recognition, sentiment analysis, machine translation, and question answering.",
       "ground_truth": "Key NLP tasks include text classification, named entity recognition, sentiment analysis, machine translation, and question answering.",
       "contexts": [
         "Natural Language Processing (NLP) is a field of artificial intelligence focused on enabling computers to understand, interpret, and generate human language. Key NLP tasks include text classification, named entity recognition, sentiment analysis, machine translation, and question answering. Modern NLP relies heavily on transformer-based models like BERT, GPT, and T5. Tokenization, the process of breaking text into smaller units (tokens), is a fundamental preprocessing step in NLP pipelines.",
@@ -130,7 +130,7 @@
     },
     {
       "question": "What is tokenization in NLP?",
-      "answer": "Tokenization in NLP involves breaking down text into smaller units called tokens, typically words or subwords. This preprocessing step is crucial as it simplifies input data for further processing tasks like classification, named entity recognition, and sentiment analysis.",
+      "answer": "Tokenization in Natural Language Processing (NLP) involves breaking down text into smaller units called tokens, typically words or subwords. This process prepares the input data for further processing by a model, such as feeding it to a neural network for classification tasks like sentiment analysis or generating text based on context.",
       "ground_truth": "Tokenization is the process of breaking text into smaller units called tokens. It is a fundamental preprocessing step in NLP pipelines.",
       "contexts": [
         "Natural Language Processing (NLP) is a field of artificial intelligence focused on enabling computers to understand, interpret, and generate human language. Key NLP tasks include text classification, named entity recognition, sentiment analysis, machine translation, and question answering. Modern NLP relies heavily on transformer-based models like BERT, GPT, and T5. Tokenization, the process of breaking text into smaller units (tokens), is a fundamental preprocessing step in NLP pipelines.",
@@ -138,7 +138,7 @@
         "Gradient descent is an optimization algorithm used to minimize a loss function by iteratively adjusting model parameters in the direction of steepest descent. The learning rate controls the step size of each update. Variants include stochastic gradient descent (SGD), which uses a single sample per update, mini-batch gradient descent, which uses a subset of samples, and Adam optimizer, which adapts learning rates for each parameter. Gradient descent is the foundation of training neural networks and many other machine learning models."
       ],
       "faithfulness": 1.0,
-      "answer_relevancy": 0.9546595408562711,
+      "answer_relevancy": 0.977280360968208,
       "context_recall": 1.0
     },
     {
@@ -156,7 +156,7 @@
     },
     {
       "question": "What is the vanishing gradient problem in RNNs?",
-      "answer": "The vanishing gradient problem in RNNs occurs because as information flows through long sequences of time steps, gradients can become very small or even zero. This makes it difficult for the model to learn dependencies across longer intervals due to diminishing returns on the learning process.",
+      "answer": "The vanishing gradient problem in RNNs occurs because as information flows through multiple time steps, the gradients of the error with respect to the weights become very small. This makes it difficult for long-range dependencies to be learned effectively due to the diminishing effect of backpropagation through time (BPTT).",
       "ground_truth": "The vanishing gradient problem makes it difficult for standard RNNs to learn long-range dependencies in sequential data. LSTM and GRU architectures address this by using gating mechanisms to control information flow.",
       "contexts": [
         "Recurrent Neural Networks (RNNs) are neural networks designed for sequential data processing. Unlike feedforward networks, RNNs have connections that form cycles, allowing information to persist across time steps. This makes them suitable for tasks like language modeling, speech recognition, and time series prediction. However, standard RNNs suffer from the vanishing gradient problem, which makes learning long-range dependencies difficult. Long Short-Term Memory (LSTM) and Gated Recurrent Unit (GRU) architectures address this by using gating mechanisms to control information flow.",
@@ -195,7 +195,7 @@
     },
     {
       "question": "What are the popular reinforcement learning algorithms?",
-      "answer": "Popular reinforcement learning algorithms include Q-learning, Deep Q-Networks (DQN), Policy Gradient methods, and Proximal Policy Optimization (PPO).",
+      "answer": "The popular reinforcement learning algorithms include Q-learning, Deep Q-Networks (DQN), Policy Gradient methods, and Proximal Policy Optimization (PPO).",
       "ground_truth": "Popular RL algorithms include Q-learning, Deep Q-Networks (DQN), Policy Gradient methods, and Proximal Policy Optimization (PPO).",
       "contexts": [
         "Reinforcement Learning (RL) is a type of machine learning where an agent learns to make decisions by interacting with an environment. The agent takes actions, receives rewards or penalties, and adjusts its strategy (policy) to maximize cumulative reward. Key concepts include the state space, action space, reward function, and the exploration-exploitation tradeoff. Popular RL algorithms include Q-learning, Deep Q-Networks (DQN), Policy Gradient methods, and Proximal Policy Optimization (PPO). RL has been successfully applied to game playing, robotics, and recommendation systems.",
