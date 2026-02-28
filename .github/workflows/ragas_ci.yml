@@ -77,9 +77,13 @@ jobs:
           with open('hometask_9.ipynb', 'r') as f:
               nb = json.load(f)
           for cell in nb['cells']:
-              for output in cell.get('outputs', []):
-                  output.pop('jetTransient', None)
-              cell['outputs'] = []
+              if cell['cell_type'] == 'code':
+                  for output in cell.get('outputs', []):
+                      output.pop('jetTransient', None)
+                  cell['outputs'] = []
+              else:
+                  cell.pop('outputs', None)
+                  cell.pop('execution_count', None)
           with open('hometask_9.ipynb', 'w') as f:
               json.dump(nb, f, indent=1)
           print('Notebook sanitized: cleared outputs and IDE-specific fields')
@@ -98,7 +102,6 @@ jobs:
           echo "Starting notebook execution at $(date)"
           jupyter nbconvert --to notebook --execute hometask_9.ipynb \
             --ExecutePreprocessor.timeout=900 \
-            --ExecutePreprocessor.cwd=. \
             --output hometask_9_executed.ipynb \
             --log-level=INFO
           echo "Notebook execution finished at $(date)"
