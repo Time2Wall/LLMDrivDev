@@ -87,12 +87,13 @@ class TestRagasPerSampleMetrics:
             )
 
     def test_metrics_in_valid_range(self, per_sample_metrics):
-        """All metric values must be between 0 and 1."""
+        """All metric values must be between 0 and 1 (with floating point tolerance)."""
         metric_columns = ["faithfulness", "answer_relevancy", "context_recall"]
+        eps = 1e-6
         for col in metric_columns:
             if col in per_sample_metrics.columns:
                 values = per_sample_metrics[col].dropna()
-                assert (values >= 0).all() and (values <= 1).all(), (
+                assert (values >= -eps).all() and (values <= 1 + eps).all(), (
                     f"Metric '{col}' has values outside [0, 1] range"
                 )
 
