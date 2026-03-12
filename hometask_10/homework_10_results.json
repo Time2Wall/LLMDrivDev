@@ -7,25 +7,25 @@
   "models": {
     "clip_vit_b32": {
       "name": "CLIP ViT-B/32 (OpenAI)",
-      "embedding_time_s": 17.88,
-      "index_time_s": 0.41,
-      "avg_search_time_ms": 11.66,
+      "embedding_time_s": 11.12,
+      "index_time_s": 0.26,
+      "avg_search_time_ms": 28.53,
       "mrr": 0.875,
-      "p_at_5": 0.6,
+      "p_at_5": 0.58,
       "p_at_10": 0.62,
       "hit_rate": 1.0,
-      "avg_cosine_similarity": 0.2561
+      "avg_cosine_similarity": 0.2559
     },
     "openclip_vit_b32": {
       "name": "OpenCLIP ViT-B/32 (LAION-2B)",
-      "embedding_time_s": 13.82,
-      "index_time_s": 0.3,
-      "avg_search_time_ms": 10.93,
+      "embedding_time_s": 8.1,
+      "index_time_s": 0.27,
+      "avg_search_time_ms": 8.01,
       "mrr": 0.95,
-      "p_at_5": 0.72,
-      "p_at_10": 0.65,
+      "p_at_5": 0.7,
+      "p_at_10": 0.64,
       "hit_rate": 1.0,
-      "avg_cosine_similarity": 0.2182
+      "avg_cosine_similarity": 0.2184
     }
   },
   "vector_db": "ChromaDB (HNSW, cosine)",
